@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "itemtrails",
+  "version": "${version}",
+  "name": "ItemTrails",
+  "description": "Adds customizable particle trails to projectiles like arrows, pearls, and more.",
+  "authors": [],
+  "contact": {},
+  "license": "GPL-3.0",
+  "icon": "assets/itemtrails/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.scytheclient.itemtrails.client.ItemtrailsDataGenerator"
+    ],
+    "client": [
+      "com.scytheclient.itemtrails.client.ItemtrailsClient"
+    ],
+    "main": [
+      "com.scytheclient.itemtrails.Itemtrails"
+    ]
+  },
+  "mixins": [
+    "itemtrails.mixins.json",
+    {
+      "config": "itemtrails.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": ">=1.21"
+  }
+}
